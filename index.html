@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Property Developer Pro — Feasibility Study App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1.25rem;
+            color: #475569;
+            margin-bottom: 1.5rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #1e293b;
+            color: #ffffff;
+            padding: 0.3rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .section {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e9edf2;
+        }
+        .section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+        .section p {
+            color: #334155;
+            margin-bottom: 1rem;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+        .feature-item {
+            background: #f1f5f9;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+        .feature-item strong {
+            color: #0f172a;
+        }
+        .btn {
+            display: inline-block;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-right: 0.5rem;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #1e293b;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #0f172a;
+            border: 2px solid #0f172a;
+        }
+        .btn-outline:hover {
+            background: #0f172a;
+            color: #ffffff;
+        }
+        .disclaimer {
+            background: #fef9e7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            color: #78350f;
+            margin-top: 1rem;
+        }
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e9edf2;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            text-align: center;
+        }
+        .lang-badge {
+            display: inline-block;
+            background: #e9edf2;
+            padding: 0.2rem 0.8rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            margin-right: 0.3rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        ul li:last-child {
+            border-bottom: none;
+        }
+        .highlight {
+            background: #dbeafe;
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+        }
+        @media (max-width: 640px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 1rem;
+            }
+            .btn {
+                display: block;
+                margin-bottom: 0.5rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Badge -->
+        <div class="badge">📱 Windows & Android</div>
+
+        <!-- Headline -->
+        <h1>Property Developer Pro</h1>
+        <p class="subtitle">Learn property development feasibility — costs, GDV, cash flow &amp; returns.</p>
+
+        <!-- Quick Links -->
+        <div style="margin-bottom: 2rem;">
+            <a href="#features" class="btn">Explore Features</a>
+            <a href="#disclaimer" class="btn btn-outline">Legal Notice</a>
+        </div>
+
+        <!-- Section: What It Is -->
+        <div class="section">
+            <h2>📌 What Is Property Developer Pro?</h2>
+            <p><strong>Property Developer Pro</strong> is an educational and informational tool that helps you understand how a property development feasibility study is built — from the land, through the product and programme, to the costs, sales, returns, and cash flow.</p>
+            <p>It is designed for <strong>learning and exploration</strong>. Enter your own assumptions and watch a development’s numbers come together, section by section, with a plain-language educational takeaway on every topic.</p>
+        </div>
+
+        <!-- Section: Who It's For -->
+        <div class="section">
+            <h2>👥 Who Is It For?</h2>
+            <div class="grid-3">
+                <div class="feature-item"><strong>🎓 Students</strong><br />Learning the fundamentals</div>
+                <div class="feature-item"><strong>💼 Professionals</strong><br />Structured feasibility sketching</div>
+                <div class="feature-item"><strong>🧠 Curious Minds</strong><br />Understanding development viability</div>
+            </div>
+        </div>
+
+        <!-- Section: Features -->
+        <div class="section" id="features">
+            <h2>🚀 Key Features</h2>
+            <div class="grid-2">
+                <div class="feature-item">✅ <strong>14 Guided Sections</strong> — from land to returns</div>
+                <div class="feature-item">✅ <strong>Live Calculations</strong> — GDV, cost, profit &amp; margin update as you type</div>
+                <div class="feature-item">✅ <strong>Master Programme (Gantt)</strong> — critical-path tracking</div>
+                <div class="feature-item">✅ <strong>Month-by-Month Cash Flow</strong> — peak funding &amp; surplus</div>
+                <div class="feature-item">✅ <strong>Progress Billing</strong> — KPKT Schedule G &amp; H stages</div>
+                <div class="feature-item">✅ <strong>Educational Takeaways</strong> — concept, framework, statutes &amp; caveats</div>
+                <div class="feature-item">✅ <strong>Recurring-Income Model</strong> — per-pax operating model</div>
+                <div class="feature-item">✅ <strong>Returns Analysis</strong> — ROI, IRR &amp; margin</div>
+                <div class="feature-item">✅ <strong>Export, Import &amp; PDF Reports</strong> — share your study</div>
+                <div class="feature-item">✅ <strong>Focus on Peninsular Malaysia</strong> — statutory context</div>
+            </div>
+        </div>
+
+        <!-- Section: 14 Sections -->
+        <div class="section">
+            <h2>🧭 What You Can Explore</h2>
+            <p>The app is structured into <strong>14 guided sections</strong>:</p>
+            <ul>
+                <li><strong>1.</strong> Land Information — tenure, planning parameters</li>
+                <li><strong>2.</strong> Land Cost &amp; Acquisition Considerations</li>
+                <li><strong>3.</strong> Product Mix &amp; Gross Development Value (GDV)</li>
+                <li><strong>4.</strong> Progress Billing — Schedule G &amp; H stages</li>
+                <li><strong>5.</strong> Master Programme — Gantt chart with critical path</li>
+                <li><strong>6.</strong> Sales Assumptions &amp; Take-up Rates</li>
+                <li><strong>7.</strong> Recurring-Income / Operating Model (Per-Pax)</li>
+                <li><strong>8.</strong> Construction &amp; Development Costs</li>
+                <li><strong>9.</strong> Groundworks &amp; Earthworks</li>
+                <li><strong>10.</strong> Consultant Fees &amp; Project Team</li>
+                <li><strong>11.</strong> Feasibility Statement</li>
+                <li><strong>12.</strong> Cost Apportionment</li>
+                <li><strong>13.</strong> Returns Analysis — ROI, IRR &amp; Margin</li>
+                <li><strong>14.</strong> Master Cash Flow — Monthly with Peak Funding</li>
+            </ul>
+        </div>
+
+        <!-- Section: Languages -->
+        <div class="section">
+            <h2>🗣️ Available In</h2>
+            <p>
+                <span class="lang-badge">🇬🇧 English</span>
+                <span class="lang-badge">🇲🇾 Bahasa Malaysia</span>
+                <span class="lang-badge">🇨🇳 Chinese</span>
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #475569;">
+                <strong>Language Discrepancy Clause:</strong> In the event of any discrepancy between language versions, the English version shall prevail.
+            </p>
+        </div>
+
+        <!-- Section: Disclaimer -->
+        <div class="section" id="disclaimer">
+            <h2>⚠️ Important — Please Read</h2>
+            <div class="disclaimer">
+                <p><strong>This App is for EDUCATIONAL and INFORMATIONAL purposes only.</strong> All calculations, projections, and outputs are estimates based on the assumptions you enter. They are <strong>NOT</strong> financial, investment, or professional advice, <strong>NOT</strong> a valuation, and <strong>NOT</strong> a guarantee of any outcome.</p>
+                <p style="margin-top: 0.5rem;">The App does not consider market, financing, timing, or execution risk. Before making any property or business decision, seek independent verification from qualified professionals (for example licensed valuers, property lawyers, registered quantity surveyors, professional engineers, town planners, and chartered accountants).</p>
+                <p style="margin-top: 0.5rem;">The App focuses on <strong>Peninsular Malaysia</strong>. Statutory references are provided for general educational context only and change over time; always confirm the current position with the relevant authorities and professionals.</p>
+                <p style="margin-top: 0.5rem;"><strong>You use the outputs at your own risk.</strong> The developer assumes no liability for decisions or losses arising from your use of this App.</p>
+            </div>
+            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: #475569;">© 2026 Wong Kian Foong. All rights reserved.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Developer:</strong> Wong Kian Foong &nbsp;·&nbsp; 📧 <a href="mailto:raywkf@gmail.com" style="color: #0f172a;">raywkf@gmail.com</a></p>
+            <p style="margin-top: 0.25rem;">Property Developer Pro — Educational Feasibility Study Tool</p>
+        </div>
+
+    </div>
+</body>
+</html>
