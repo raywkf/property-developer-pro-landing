@@ -181,6 +181,65 @@
                 text-align: center;
             }
         }
+        /* ===== Store download buttons ===== */
+        .download-section {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            border: 1px solid #e9edf2;
+            text-align: center;
+        }
+        .store-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 0.7rem 1.4rem;
+            border-radius: 0.6rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s;
+            min-width: 200px;
+        }
+        .store-btn-live:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+        }
+        .store-btn-soon {
+            background: #94a3b8;
+            cursor: default;
+            opacity: 0.75;
+        }
+        .store-icon {
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+        .store-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+        .store-small {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .store-big {
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+        @media (max-width: 640px) {
+            .store-btn { width: 100%; justify-content: center; }
+        }
+
     </style>
 </head>
 <body>
@@ -204,6 +263,30 @@
             <a href="#features" class="btn">Explore Features</a>
             <a href="#disclaimer" class="btn btn-outline">Legal Notice</a>
         </div>
+        <!-- ============ DOWNLOAD / GET THE APP ============ -->
+        <div class="download-section" id="download">
+            <h2 style="font-size:1.5rem;font-weight:700;color:#0f172a;margin-bottom:0.25rem;">📥 Get Property Developer Pro&trade;</h2>
+            <p style="color:#475569;margin-bottom:1.25rem;">Available on Windows now — Android coming soon.</p>
+            <div class="store-buttons">
+                <!-- Microsoft Store -->
+                <a href="https://apps.microsoft.com/detail/9PNDSVXMB04J?hl=en-us&amp;gl=MY&amp;ocid=pdpshare" target="_blank" rel="noopener" class="store-btn store-btn-live">
+                    <span class="store-icon">⊞</span>
+                    <span class="store-text">
+                        <span class="store-small">Download for</span>
+                        <span class="store-big">Windows</span>
+                    </span>
+                </a>
+                <!-- Google Play (coming soon) -->
+                <span class="store-btn store-btn-soon">
+                    <span class="store-icon">▶</span>
+                    <span class="store-text">
+                        <span class="store-small">Coming soon on</span>
+                        <span class="store-big">Google Play</span>
+                    </span>
+                </span>
+            </div>
+        </div>
+
 
         <!-- Section: What It Is -->
         <div class="section">
