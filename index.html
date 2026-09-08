@@ -3,560 +3,213 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Property Developer Pro — Feasibility Study App</title>
+    <title>PD HQ&trade; — Property Development Tools, Made Simple</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
+            background: #000000;
+            color: #e5e7eb;
             line-height: 1.6;
         }
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
+        .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+        /* Hero */
+        .hero { text-align: center; padding: 1rem 0 0.5rem; }
+        .hero img.logo {
+            width: 190px; height: 190px; border-radius: 1.25rem;
+            box-shadow: 0 0 40px rgba(59,158,255,0.25);
         }
-        /* LOGO STYLES ADDED HERE */
-        .logo-wrapper {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        .pdpro-logo {
-            max-width: 200px;
-            height: auto;
-            display: inline-block;
-        }
-        /* END LOGO STYLES */
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            color: #0f172a;
-            margin-bottom: 0.5rem;
-        }
-        .subtitle {
-            font-size: 1.25rem;
-            color: #475569;
-            margin-bottom: 1.5rem;
+        .brand-tag {
+            font-size: 1.3rem; color: #cbd5e1; margin-top: 1rem; font-weight: 500;
         }
         .badge {
-            display: inline-block;
-            background: #1e293b;
-            color: #ffffff;
-            padding: 0.3rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            display: inline-block; background: #0f1c2e; color: #93c5fd;
+            border: 1px solid #1e3a5f;
+            padding: 0.35rem 1.1rem; border-radius: 9999px;
+            font-size: 0.8rem; font-weight: 600; margin: 1.25rem 0 0.5rem;
+            letter-spacing: 0.02em;
         }
+
         .section {
-            background: #ffffff;
-            border-radius: 1rem;
-            padding: 1.5rem 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-            border: 1px solid #e9edf2;
+            background: #0a0a0a; border-radius: 1rem; padding: 1.75rem 2rem;
+            margin-bottom: 1.75rem; border: 1px solid #1a1a1a;
         }
-        .section h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 1rem;
+        .section p { color: #cbd5e1; margin-bottom: 1rem; }
+        .section p:last-child { margin-bottom: 0; }
+        .section strong { color: #f1f5f9; }
+
+        /* Vision / KISS band */
+        .vision-band {
+            background: linear-gradient(135deg, #0a1420 0%, #0d2a4a 100%);
+            border: 1px solid #1e3a5f;
+            border-radius: 1rem; padding: 2rem;
+            margin-bottom: 1.75rem; text-align: center;
         }
-        .section p {
-            color: #334155;
-            margin-bottom: 1rem;
+        .vision-band h2 { color: #fff; font-size: 1.4rem; margin-bottom: 0.75rem; font-weight: 700; }
+        .vision-band p { color: #cbd5e1; font-size: 1.05rem; max-width: 720px; margin: 0 auto; }
+        .kiss {
+            margin-top: 1.5rem; padding-top: 1.25rem;
+            border-top: 1px solid rgba(147,197,253,0.2);
         }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+        .kiss .kiss-title { color: #4ea3ff; font-weight: 800; font-size: 1.1rem; letter-spacing: 0.02em; }
+        .kiss p { color: #cbd5e1; margin-top: 0.4rem; }
+
+        /* Product grid */
+        .products-head { text-align: center; margin-bottom: 1.5rem; }
+        .products-head h2 { font-size: 1.75rem; font-weight: 800; color: #f8fafc; margin-bottom: 0.4rem; }
+        .products-head p { color: #94a3b8; }
+        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+        .product-card {
+            background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 1rem;
+            padding: 1.5rem; display: flex; flex-direction: column;
+            transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
         }
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1rem;
+        .product-card.live:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(59,158,255,0.18);
+            border-color: #1e3a5f;
         }
-        .feature-item {
-            background: #f1f5f9;
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            font-size: 0.95rem;
-            color: #1e293b;
+        .product-card .pc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+        .product-card .pc-name { font-size: 1.35rem; font-weight: 800; color: #f1f5f9; }
+        .pc-status {
+            font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.7rem;
+            border-radius: 9999px; letter-spacing: 0.03em; text-transform: uppercase;
         }
-        .feature-item strong {
-            color: #0f172a;
+        .pc-status.s-live { background: #0c2a17; color: #4ade80; border: 1px solid #14532d; }
+        .pc-status.s-soon { background: #14161a; color: #94a3b8; border: 1px solid #262626; }
+        .product-card .pc-desc { color: #a3adba; font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.1rem; }
+        .product-card .pc-desc strong { color: #e5e7eb; }
+        .pc-btn {
+            display: inline-block; text-align: center;
+            background: #1668d4; color: #fff;
+            padding: 0.6rem 1.2rem; border-radius: 0.6rem; font-weight: 600;
+            text-decoration: none; transition: background 0.2s;
         }
-        .btn {
-            display: inline-block;
-            background: #0f172a;
-            color: #ffffff;
-            padding: 0.75rem 2rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            text-decoration: none;
-            margin-right: 0.5rem;
-            transition: background 0.2s;
-        }
-        .btn:hover {
-            background: #1e293b;
-        }
-        .btn-outline {
-            background: transparent;
-            color: #0f172a;
-            border: 2px solid #0f172a;
-        }
-        .btn-outline:hover {
-            background: #0f172a;
-            color: #ffffff;
-        }
-        .disclaimer {
-            background: #fef9e7;
-            border-left: 4px solid #f59e0b;
-            padding: 1rem 1.5rem;
-            border-radius: 0.5rem;
-            font-size: 0.9rem;
-            color: #78350f;
-            margin-top: 1rem;
-        }
+        .pc-btn:hover { background: #2b7cef; }
+        .pc-btn.disabled { background: #1a1a1a; color: #64748b; cursor: default; pointer-events: none; border: 1px solid #262626; }
+
         .footer {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e9edf2;
-            font-size: 0.85rem;
-            color: #94a3b8;
-            text-align: center;
+            margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #1a1a1a;
+            font-size: 0.85rem; color: #64748b; text-align: center;
         }
-        .lang-badge {
-            display: inline-block;
-            background: #e9edf2;
-            padding: 0.2rem 0.8rem;
-            border-radius: 9999px;
-            font-size: 0.8rem;
-            margin-right: 0.3rem;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            padding: 0.4rem 0;
-            border-bottom: 1px solid #f1f5f9;
-        }
-        ul li:last-child {
-            border-bottom: none;
-        }
-        ul li a {
-            color: #0f172a;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        ul li a:hover {
-            text-decoration: underline;
-        }
-        .highlight {
-            background: #dbeafe;
-            padding: 0.1rem 0.4rem;
-            border-radius: 0.25rem;
-            font-weight: 600;
-        }
-        @media (max-width: 640px) {
-            .grid-2, .grid-3 {
-                grid-template-columns: 1fr;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            .section {
-                padding: 1rem;
-            }
-            .btn {
-                display: block;
-                margin-bottom: 0.5rem;
-                text-align: center;
-            }
-        }
-        /* ===== Screenshot gallery ===== */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-        .gallery-item {
-            border: 1px solid #e9edf2;
-            border-radius: 0.6rem;
-            overflow: hidden;
-            cursor: pointer;
-            background: #f1f5f9;
-            transition: transform 0.15s, box-shadow 0.15s;
-        }
-        .gallery-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            object-position: top;
-            display: block;
-        }
-        .gallery-caption {
-            padding: 0.5rem 0.75rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #0f172a;
-            text-align: center;
-        }
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(15,23,42,0.92);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-        .lightbox.open { display: flex; }
-        .lightbox img {
-            max-width: 92%;
-            max-height: 82vh;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
-        .lightbox-caption {
-            position: absolute;
-            bottom: 1.5rem;
-            left: 0;
-            right: 0;
-            text-align: center;
-            color: #f1f5f9;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        .lightbox-close {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            color: #f1f5f9;
-            font-size: 2.5rem;
-            line-height: 1;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #f1f5f9;
-            font-size: 2.5rem;
-            cursor: pointer;
-            background: rgba(0,0,0,0.3);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            user-select: none;
-        }
-        .lightbox-prev { left: 1rem; }
-        .lightbox-next { right: 1rem; }
-        @media (max-width: 640px) {
-            .gallery-grid { grid-template-columns: 1fr 1fr; }
-            .gallery-item img { height: 130px; }
-            .lightbox-nav { font-size: 1.8rem; padding: 0.4rem 0.7rem; }
-        }
+        .footer a { color: #93c5fd; text-decoration: none; }
+        .footer strong { color: #cbd5e1; }
 
-        /* ===== Store download buttons ===== */
-        .download-section {
-            background: #ffffff;
-            border-radius: 1rem;
-            padding: 1.5rem 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-            border: 1px solid #e9edf2;
-            text-align: center;
-        }
-        .store-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .store-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: #0f172a;
-            color: #ffffff;
-            padding: 0.7rem 1.4rem;
-            border-radius: 0.6rem;
-            text-decoration: none;
-            transition: background 0.2s, transform 0.1s;
-            min-width: 200px;
-        }
-        .store-btn-live:hover {
-            background: #1e293b;
-            transform: translateY(-2px);
-        }
-        .store-btn-soon {
-            background: #94a3b8;
-            cursor: default;
-            opacity: 0.75;
-        }
-        .store-icon {
-            font-size: 1.6rem;
-            line-height: 1;
-        }
-        .store-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            line-height: 1.2;
-        }
-        .store-small {
-            font-size: 0.7rem;
-            opacity: 0.85;
-        }
-        .store-big {
-            font-size: 1.05rem;
-            font-weight: 700;
-        }
         @media (max-width: 640px) {
-            .store-btn { width: 100%; justify-content: center; }
+            .product-grid { grid-template-columns: 1fr; }
+            .hero img.logo { width: 150px; height: 150px; }
+            .brand-tag { font-size: 1.1rem; }
+            .section, .vision-band { padding: 1.25rem; }
         }
-
     </style>
 </head>
 <body>
     <div class="container">
 
-        <!-- LOGO INSERTED HERE -->
-        <div class="logo-wrapper">
-            <img src="images/PDProNew.jpg" alt="PD PRO Logo" class="pdpro-logo">
-        </div>
-        <!-- END LOGO -->
-
-        <!-- Badge -->
-        <div class="badge">📱 Windows & Android</div>
-
-        <!-- Headline -->
-        <h1>Property Developer Pro&trade;</h1>
-        <p class="subtitle">Learn property development feasibility — costs, GDV, cash flow &amp; returns.</p>
-
-        <!-- Quick Links -->
-        <div style="margin-bottom: 2rem;">
-            <a href="#features" class="btn">Explore Features</a>
-            <a href="#screenshots" class="btn btn-outline">Screenshots</a>
-            <a href="#disclaimer" class="btn btn-outline">Legal Notice</a>
-        </div>
-        <!-- ============ DOWNLOAD / GET THE APP ============ -->
-        <div class="download-section" id="download">
-            <h2 style="font-size:1.5rem;font-weight:700;color:#0f172a;margin-bottom:0.25rem;">📥 Get Property Developer Pro&trade;</h2>
-            <p style="color:#475569;margin-bottom:1.25rem;">Available on Windows now — Android coming soon.</p>
-            <div class="store-buttons">
-                <!-- Microsoft Store -->
-                <a href="https://apps.microsoft.com/detail/9PNDSVXMB04J?hl=en-us&amp;gl=MY&amp;ocid=pdpshare" target="_blank" rel="noopener" class="store-btn store-btn-live">
-                    <span class="store-icon">⊞</span>
-                    <span class="store-text">
-                        <span class="store-small">Download for</span>
-                        <span class="store-big">Windows</span>
-                    </span>
-                </a>
-                <!-- Google Play (coming soon) -->
-                <span class="store-btn store-btn-soon">
-                    <span class="store-icon">▶</span>
-                    <span class="store-text">
-                        <span class="store-small">Coming soon on</span>
-                        <span class="store-big">Google Play</span>
-                    </span>
-                </span>
-            </div>
+        <!-- Hero -->
+        <div class="hero">
+            <img class="logo" src="images/PD_HQ_1080_Enhanced.jpg" alt="PD HQ logo" />
+            <p class="brand-tag">Property development, made simple — step by step.</p>
+            <div class="badge">🏗️ Educational Tools for Property Development</div>
         </div>
 
-
-        <!-- Section: What It Is -->
+        <!-- Intro -->
         <div class="section">
-            <h2>📌 What Is Property Developer Pro&trade;?</h2>
-            <p><strong>Property Developer Pro&trade;</strong> is an educational and informational tool that helps you understand how a property development feasibility study is built — from the land, through the product and programme, to the costs, sales, returns, and cash flow.</p>
-            <p>It is designed for <strong>learning and exploration</strong>. Enter your own assumptions and watch a development’s numbers come together, section by section, with a plain-language educational takeaway on every topic.</p>
-        </div>
-
-        <!-- Section: Who It's For -->
-        <div class="section">
-            <h2>👥 Who Is It For?</h2>
-            <div class="grid-3">
-                <div class="feature-item"><strong>🎓 Students</strong><br />Learning the fundamentals</div>
-                <div class="feature-item"><strong>💼 Professionals</strong><br />Structured feasibility sketching</div>
-                <div class="feature-item"><strong>🧠 Curious Minds</strong><br />Understanding development viability</div>
-            </div>
-        </div>
-
-        <!-- Section: Features -->
-        <div class="section" id="features">
-            <h2>🚀 Key Features</h2>
-            <div class="grid-2">
-                <div class="feature-item">✅ <strong>14 Guided Sections</strong> — from land to returns</div>
-                <div class="feature-item">✅ <strong>Live Calculations</strong> — GDV, cost, profit &amp; margin update as you type</div>
-                <div class="feature-item">✅ <strong>Master Programme (Gantt)</strong> — critical-path tracking</div>
-                <div class="feature-item">✅ <strong>Month-by-Month Cash Flow</strong> — peak funding &amp; surplus</div>
-                <div class="feature-item">✅ <strong>Progress Billing</strong> — KPKT Schedule G &amp; H stages</div>
-                <div class="feature-item">✅ <strong>Educational Takeaways</strong> — concept, framework, statutes &amp; caveats</div>
-                <div class="feature-item">✅ <strong>Recurring-Income Model</strong> — per-pax operating model</div>
-                <div class="feature-item">✅ <strong>Returns Analysis</strong> — ROI, IRR &amp; margin</div>
-                <div class="feature-item">✅ <strong>Export, Import &amp; PDF Reports</strong> — share your study</div>
-                <div class="feature-item">✅ <strong>Focus on Peninsular Malaysia</strong> — statutory context</div>
-            </div>
-        </div>
-
-        <!-- Section: Screenshots -->
-        <div class="section" id="screenshots">
-            <h2>📸 See It In Action</h2>
-            <p>A look inside Property Developer Pro&trade; — tap any screenshot to enlarge.</p>
-            <div class="gallery-grid">
-                <div class="gallery-item" onclick="openLightbox(0)"><img src="images/PDPro-Dashboard.png" alt="Dashboard" loading="lazy"><div class="gallery-caption">Dashboard</div></div>
-                <div class="gallery-item" onclick="openLightbox(1)"><img src="images/PDPro-Info.png" alt="Project Info" loading="lazy"><div class="gallery-caption">Project Info</div></div>
-                <div class="gallery-item" onclick="openLightbox(2)"><img src="images/PDPro-Land%20Cost.png" alt="Land Cost" loading="lazy"><div class="gallery-caption">Land Cost</div></div>
-                <div class="gallery-item" onclick="openLightbox(3)"><img src="images/PDPro-Developable.png" alt="Developable Area" loading="lazy"><div class="gallery-caption">Developable Area</div></div>
-                <div class="gallery-item" onclick="openLightbox(4)"><img src="images/PDPro-Cost.png" alt="Development Cost" loading="lazy"><div class="gallery-caption">Development Cost</div></div>
-                <div class="gallery-item" onclick="openLightbox(5)"><img src="images/PDPro-Consultant.png" alt="Consultant Fees" loading="lazy"><div class="gallery-caption">Consultant Fees</div></div>
-                <div class="gallery-item" onclick="openLightbox(6)"><img src="images/PDPro-Sales.png" alt="Sales Assumptions" loading="lazy"><div class="gallery-caption">Sales Assumptions</div></div>
-                <div class="gallery-item" onclick="openLightbox(7)"><img src="images/PDPro-Billing.png" alt="Progress Billing" loading="lazy"><div class="gallery-caption">Progress Billing</div></div>
-                <div class="gallery-item" onclick="openLightbox(8)"><img src="images/PDPro-Programme.png" alt="Master Programme" loading="lazy"><div class="gallery-caption">Master Programme</div></div>
-                <div class="gallery-item" onclick="openLightbox(9)"><img src="images/PDPro-Recurring.png" alt="Recurring Income" loading="lazy"><div class="gallery-caption">Recurring Income</div></div>
-                <div class="gallery-item" onclick="openLightbox(10)"><img src="images/PDPro-FS.png" alt="Feasibility Statement" loading="lazy"><div class="gallery-caption">Feasibility Statement</div></div>
-                <div class="gallery-item" onclick="openLightbox(11)"><img src="images/PDPro-CostApportionment.png" alt="Cost Apportionment" loading="lazy"><div class="gallery-caption">Cost Apportionment</div></div>
-                <div class="gallery-item" onclick="openLightbox(12)"><img src="images/PDPro-Return.png" alt="Returns Analysis" loading="lazy"><div class="gallery-caption">Returns Analysis</div></div>
-                <div class="gallery-item" onclick="openLightbox(13)"><img src="images/PDPro-CF.png" alt="Master Cash Flow" loading="lazy"><div class="gallery-caption">Master Cash Flow</div></div>
-            </div>
-        </div>
-
-        <!-- Section: 14 Sections -->
-        <div class="section">
-            <h2>🧭 What You Can Explore</h2>
-            <p>The app is structured into <strong>14 guided sections</strong>:</p>
-            <ul>
-                <li><strong>1.</strong> Land Information — tenure, planning parameters</li>
-                <li><strong>2.</strong> Land Cost &amp; Acquisition Considerations</li>
-                <li><strong>3.</strong> Product Mix &amp; Gross Development Value (GDV)</li>
-                <li><strong>4.</strong> Progress Billing — Schedule G &amp; H stages</li>
-                <li><strong>5.</strong> Master Programme — Gantt chart with critical path</li>
-                <li><strong>6.</strong> Sales Assumptions &amp; Take-up Rates</li>
-                <li><strong>7.</strong> Recurring-Income / Operating Model (Per-Pax)</li>
-                <li><strong>8.</strong> Construction &amp; Development Costs</li>
-                <li><strong>9.</strong> Groundworks &amp; Earthworks</li>
-                <li><strong>10.</strong> Consultant Fees &amp; Project Team</li>
-                <li><strong>11.</strong> Feasibility Statement</li>
-                <li><strong>12.</strong> Cost Apportionment</li>
-                <li><strong>13.</strong> Returns Analysis — ROI, IRR &amp; Margin</li>
-                <li><strong>14.</strong> Master Cash Flow — Monthly with Peak Funding</li>
-            </ul>
-        </div>
-
-        <!-- Section: Languages -->
-        <div class="section">
-            <h2>🗣️ Available In</h2>
             <p>
-                <span class="lang-badge">🇬🇧 English</span>
-                <span class="lang-badge">🇲🇾 Bahasa Malaysia</span>
-                <span class="lang-badge">🇨🇳 Chinese</span>
+                <strong>PD HQ&trade;</strong> builds clear, rigorous, and practical software for the
+                property-development community. Our tools turn complex, high-stakes decisions —
+                <strong>feasibility, planning, budgeting, and procurement</strong> — into structured,
+                learnable, step-by-step processes.
             </p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #475569;">
-                <strong>Language Discrepancy Clause:</strong> In the event of any discrepancy between language versions, the English version shall prevail.
+            <p>
+                Whether you're a student of the built environment or real-estate disciplines,
+                a manager, or an owner, our educational tools let you work with confidence.
             </p>
         </div>
 
-        <!-- Section: Disclaimer -->
-        <div class="section" id="disclaimer">
-            <h2>⚠️ Important — Please Read</h2>
-            <div class="disclaimer">
-                <p><strong>This App is for EDUCATIONAL and INFORMATIONAL purposes only.</strong> All calculations, projections, and outputs are estimates based on the assumptions you enter. They are <strong>NOT</strong> financial, investment, or professional advice, <strong>NOT</strong> a valuation, and <strong>NOT</strong> a guarantee of any outcome.</p>
-                <p style="margin-top: 0.5rem;">The App does not consider market, financing, timing, or execution risk. Before making any property or business decision, seek independent verification from qualified professionals (for example licensed valuers, property lawyers, registered quantity surveyors, professional engineers, town planners, and chartered accountants).</p>
-                <p style="margin-top: 0.5rem;">The App focuses on <strong>Peninsular Malaysia</strong>. Statutory references are provided for general educational context only and change over time; always confirm the current position with the relevant authorities and professionals.</p>
-                <p style="margin-top: 0.5rem;"><strong>You use the outputs at your own risk.</strong> The developer assumes no liability for decisions or losses arising from your use of this App.</p>
+        <!-- Vision + KISS -->
+        <div class="vision-band">
+            <h2>Our Vision</h2>
+            <p>
+                We believe the knowledge behind sound property development shouldn't be locked away in
+                spreadsheets or the heads of a few experts. Our vision is to make that knowledge
+                accessible, transparent, and practical — one tool at a time — raising the standard of
+                decision-making across the industry.
+            </p>
+            <div class="kiss">
+                <div class="kiss-title">Keep It Simple, Stupid (K.I.S.S.)</div>
+                <p>You focus on the decisions that matter — we leave the heavy complexity to smart automation and AI behind the scenes.</p>
             </div>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: #475569;">© 2026 Wong Kian Foong / PD HQ&trade;. All rights reserved.</p>
         </div>
 
-        <!-- Section: Legal Documents -->
-        <div class="section">
-            <h2>📄 Legal Documents</h2>
-            <p>Click below to view our full legal policies:</p>
-            <ul>
-                <li><strong>Privacy Policy (English):</strong> <a href="https://doc-hosting.flycricket.io/privacy-policies-term/2c5a16c2-96ae-4508-986a-86d18757c63e/privacy" target="_blank">View</a></li>
-                <li><strong>Additional License Terms (English):</strong> <a href="https://doc-hosting.flycricket.io/additional-license-terms-property-developer-pro/a1c86c12-a4b6-4a77-bac4-7e526a9ed5b0/terms" target="_blank">View</a></li>
-                <li><strong>Dasar Privasi / 隐私政策 (BM & Chinese):</strong> <a href="https://doc-hosting.flycricket.io/dasar-privasi-yin-si-zheng-ce-property-developer-pro/fde8dc57-5388-4d01-bb9c-58143ef9cbe1/privacy" target="_blank">View</a></li>
-                <li><strong>Terma Lesen Tambahan (Bahasa Malaysia):</strong> <a href="https://doc-hosting.flycricket.io/terma-lesen-tambahan-property-developer-pro/a1cad115-05a7-47fe-ac04-7668335108d5/terms" target="_blank">View</a></li>
-                <li><strong>附加许可条款 (Chinese):</strong> <a href="https://doc-hosting.flycricket.io/fu-jia-xu-ke-tiao-kuan-property-developer-pro/1030e39c-e035-46c0-a6f2-e8d91e167d51/privacy" target="_blank">View</a></li>
-            </ul>
+        <!-- Product Family -->
+        <div class="products-head">
+            <h2>Our Products</h2>
+            <p>One growing family of tools, each focused on a critical stage of the development journey.</p>
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product-card live">
+                <div class="pc-top">
+                    <span class="pc-name">PD Pro&trade;</span>
+                    <span class="pc-status s-live">Available</span>
+                </div>
+                <p class="pc-desc">
+                    Property-development <strong>feasibility appraisal</strong> — from land, product, and
+                    programme through costs, sales, returns, and month-by-month cash flow. 14 guided
+                    sections with live calculations and plain-language educational takeaways.
+                </p>
+                <a href="pdpro.html" class="pc-btn">View PD Pro →</a>
+            </div>
+
+            <div class="product-card">
+                <div class="pc-top">
+                    <span class="pc-name">PD Plan&trade;</span>
+                    <span class="pc-status s-soon">Coming Soon</span>
+                </div>
+                <p class="pc-desc">
+                    Standalone <strong>programme &amp; scheduling</strong> — a Gantt-based master programme
+                    with critical-path tracking, cost roll-up, and progress reporting for the whole
+                    development timeline.
+                </p>
+                <span class="pc-btn disabled">Coming Soon</span>
+            </div>
+
+            <div class="product-card">
+                <div class="pc-top">
+                    <span class="pc-name">PD Budget&trade;</span>
+                    <span class="pc-status s-soon">Coming Soon</span>
+                </div>
+                <p class="pc-desc">
+                    Development <strong>cost planning &amp; control</strong> — build, track, and manage the
+                    project budget from first estimate to final account, with variance and cash-flow views.
+                </p>
+                <span class="pc-btn disabled">Coming Soon</span>
+            </div>
+
+            <div class="product-card">
+                <div class="pc-top">
+                    <span class="pc-name">PD Procurement&trade;</span>
+                    <span class="pc-status s-soon">Coming Soon</span>
+                </div>
+                <p class="pc-desc">
+                    <strong>Tender &amp; procurement</strong> management — structure packages, compare
+                    submissions, and manage the appointment of contractors and consultants with clarity.
+                </p>
+                <span class="pc-btn disabled">Coming Soon</span>
+            </div>
+
         </div>
 
         <!-- Footer -->
         <div class="footer">
-            <p><strong>Developer:</strong> Wong Kian Foong &nbsp;·&nbsp; 📧 <a href="mailto:pdhq.support@gmail.com" style="color: #0f172a;">pdhq.support@gmail.com</a></p>
-            <p style="margin-top: 0.25rem;">Property Developer Pro&trade; — Educational Feasibility Study Tool</p>
-            <p style="margin-top: 0.5rem; font-size: 0.8rem;">Property Developer Pro&trade; and PD HQ&trade; are trademarks of Wong Kian Foong.</p>
+            <p><strong>PD HQ&trade;</strong> &nbsp;·&nbsp; 📧 <a href="mailto:pdhq.support@gmail.com">pdhq.support@gmail.com</a></p>
+            <p style="margin-top: 0.5rem;">© 2026 Wong Kian Foong / PD HQ&trade;. All rights reserved.</p>
+            <p style="margin-top: 0.4rem; font-size: 0.8rem;">PD HQ&trade;, Property Developer Pro&trade;, PD Pro&trade;, PD Plan&trade;, PD Budget&trade;, and PD Procurement&trade; are trademarks of Wong Kian Foong.</p>
         </div>
 
     </div>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-        <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
-        <button class="lightbox-nav lightbox-prev" onclick="changeLightbox(event,-1)">&#8249;</button>
-        <img id="lightbox-img" src="" alt="">
-        <button class="lightbox-nav lightbox-next" onclick="changeLightbox(event,1)">&#8250;</button>
-        <div class="lightbox-caption" id="lightbox-caption"></div>
-    </div>
-
-    <script>
-        var galleryData = [
-            {src:"images/PDPro-Dashboard.png", cap:"Dashboard"},
-            {src:"images/PDPro-Info.png", cap:"Project Info"},
-            {src:"images/PDPro-Land%20Cost.png", cap:"Land Cost"},
-            {src:"images/PDPro-Developable.png", cap:"Developable Area"},
-            {src:"images/PDPro-Cost.png", cap:"Development Cost"},
-            {src:"images/PDPro-Consultant.png", cap:"Consultant Fees"},
-            {src:"images/PDPro-Sales.png", cap:"Sales Assumptions"},
-            {src:"images/PDPro-Billing.png", cap:"Progress Billing"},
-            {src:"images/PDPro-Programme.png", cap:"Master Programme"},
-            {src:"images/PDPro-Recurring.png", cap:"Recurring Income"},
-            {src:"images/PDPro-FS.png", cap:"Feasibility Statement"},
-            {src:"images/PDPro-CostApportionment.png", cap:"Cost Apportionment"},
-            {src:"images/PDPro-Return.png", cap:"Returns Analysis"},
-            {src:"images/PDPro-CF.png", cap:"Master Cash Flow"}
-        ];
-        var currentIndex = 0;
-        function showImage(i){
-            currentIndex = (i + galleryData.length) % galleryData.length;
-            document.getElementById('lightbox-img').src = galleryData[currentIndex].src;
-            document.getElementById('lightbox-caption').textContent = galleryData[currentIndex].cap;
-        }
-        function openLightbox(i){
-            showImage(i);
-            document.getElementById('lightbox').classList.add('open');
-        }
-        function closeLightbox(e){
-            if(e.target.id === 'lightbox' || e.target.className.indexOf('lightbox-close') > -1){
-                document.getElementById('lightbox').classList.remove('open');
-            }
-        }
-        function changeLightbox(e, dir){
-            e.stopPropagation();
-            showImage(currentIndex + dir);
-        }
-        document.addEventListener('keydown', function(e){
-            if(!document.getElementById('lightbox').classList.contains('open')) return;
-            if(e.key === 'Escape') document.getElementById('lightbox').classList.remove('open');
-            if(e.key === 'ArrowLeft') showImage(currentIndex - 1);
-            if(e.key === 'ArrowRight') showImage(currentIndex + 1);
-        });
-    </script>
 </body>
 </html>
