@@ -335,6 +335,73 @@
             .store-btn { width: 100%; justify-content: center; }
         }
 
+        /* ===== Promo section ===== */
+        .promo-section {
+            background: linear-gradient(135deg, #0f1420 0%, #0a0a0a 100%);
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #1e3a5f;
+        }
+        .promo-section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 1rem;
+        }
+        .promo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .promo-card {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 0.75rem;
+            padding: 1.1rem 1.3rem;
+        }
+        .promo-card .promo-tag {
+            display: inline-block;
+            background: #1668d4;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            margin-bottom: 0.6rem;
+        }
+        .promo-card.edu .promo-tag {
+            background: #15803d;
+        }
+        .promo-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 0.4rem;
+        }
+        .promo-card p {
+            font-size: 0.9rem;
+            color: #a3adba;
+            margin-bottom: 0.6rem;
+        }
+        .promo-card a.promo-email {
+            color: #5eb3ff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .promo-card a.promo-email:hover {
+            text-decoration: underline;
+        }
+        .promo-note {
+            font-size: 0.78rem;
+            color: #64748b;
+            margin-top: 0.4rem;
+        }
+        @media (max-width: 640px) {
+            .promo-grid { grid-template-columns: 1fr; }
+        }
+
         /* Back-to-hub nav */
         .hub-nav {
             max-width: 960px; margin: 0 auto; padding: 1rem 1.5rem 0;
@@ -390,6 +457,27 @@
                         <span class="store-big">Google Play</span>
                     </span>
                 </a>
+            </div>
+        </div>
+
+        <!-- ============ LAUNCH PROMOTIONS ============ -->
+        <div class="promo-section" id="promo">
+            <h2>🎉 Launch Promotions</h2>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <span class="promo-tag">EARLY BIRD</span>
+                    <h3>50% Off</h3>
+                    <p>Be among the first to use Property Developer Pro&trade;. Email us with subject "Early Bird Promo" to request your 50% discount code.</p>
+                    <a class="promo-email" href="mailto:pdhq.support@gmail.com?subject=Early%20Bird%20Promo">pdhq.support@gmail.com</a>
+                    <p class="promo-note">Limited time only.</p>
+                </div>
+                <div class="promo-card edu">
+                    <span class="promo-tag">EDUCATION PROMO</span>
+                    <h3>Special Discount</h3>
+                    <p>Studying at, or working within, any Malaysian institution of higher education? Email us with subject "Education Promo" to request your special discount code.</p>
+                    <a class="promo-email" href="mailto:pdhq.support@gmail.com?subject=Education%20Promo">pdhq.support@gmail.com</a>
+                    <p class="promo-note">Available for as long as you remain eligible.</p>
+                </div>
             </div>
         </div>
 
